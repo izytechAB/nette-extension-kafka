@@ -10,7 +10,8 @@
 	},
 	"authors": [
 		{
-			"name": "Thomas Alatalo Berg"
+            "name": "Thomas Alatalo Berg",
+            "email": "thomas.alatalo.berg@izytech.se"
 		}
 	],
 	"autoload": {
@@ -20,7 +21,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"izytechabc\\nette-extensions-kafka\\Tests\\": "tests"
+			"izytechab\\nette-extensions-kafka\\Tests\\": "tests"
 		}
 	},
 	"require": {
