@@ -1,6 +1,6 @@
 stages:
-  - build
-  - test
+    - build
+    - test
 
 image: php:latest
 
@@ -9,12 +9,16 @@ cache:
     - vendor/
 
 before_script:
-  - echo "before"
+  # Install and run Composer
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar install
+
+build:
+  stage: build
+  script:
+    - echo "build"
 
 test:
   stage: test
   script:
     - echo "test"
-build:
-  stage: build
-    - echo "build"
