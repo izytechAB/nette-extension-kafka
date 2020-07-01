@@ -13,10 +13,5 @@ before_script:
 
 test:
   stage: test
-  script:
-    #- vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
-    #- echo "test"
 build:
   stage: build
-  script:
-    #- echo "build"
