@@ -2,7 +2,7 @@ stages:
     - build
     - test
 
-image: php:latest
+image: izytechab/nette:latest
 
 cache:
   paths:
