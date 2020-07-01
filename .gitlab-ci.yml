@@ -13,5 +13,8 @@ before_script:
 
 test:
   stage: test
+  script:
+    - echo "test"
 build:
   stage: build
+    - echo "build"
