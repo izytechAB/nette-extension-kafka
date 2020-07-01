@@ -1,0 +1,21 @@
+stages:
+  - build
+  - test
+
+image: izytech/nette
+
+cache:
+  paths:
+    - vendor/
+
+before_script:
+  - echo "before"
+
+test:
+  stage: test
+  script:
+    - vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
+build:
+  stage: build
+  script:
+    - echo "build"
