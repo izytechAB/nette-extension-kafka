@@ -7,11 +7,11 @@ Easy [`Apache Kafaka`](https://kafka.apache.org//) implementation for [`Nette Fr
 ## Documentation
 
 - [Installation](.Docs/README.md#installation)
-- [Extension registration](.docs/README.md#extension-registration)
-- [Example configuration](.docs/README.md#example-configuration)
-- [Publishing messages](.docs/README.md#publishing-messages)
-- [Consuming messages](.docs/README.md#consuming-messages)
-- [Running a consumer trough CLI](.docs/README.md#running-a-consumer-trough-cli)
+- [Extension registration](.Docs/README.md#extension-registration)
+- [Example configuration](.Docs/README.md#example-configuration)
+- [Publishing messages](.Docs/README.md#publishing-messages)
+- [Consuming messages](.Docs/README.md#consuming-messages)
+- [Consuming and prodcuing messages trough CLI](.Docs/README.md#consuming-and-prodcuing-messages-trough-cli)
 
 ## Versions
 

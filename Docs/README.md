@@ -95,3 +95,19 @@ kafka:
     }
 
 ```
+
+
+## Consuming and prodcuing messages trough CLI
+
+You can consume messages from a specified topic and print messages to stdout by running CLI command below.
+
+```
+bin/console kafka:consumer test topic1
+
+```
+
+Following command will produce a message
+
+```
+bin/console kafka:producer test topic1 message
+```
