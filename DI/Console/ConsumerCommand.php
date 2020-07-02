@@ -55,17 +55,9 @@ final class ConsumerCommand extends AbstractConsumerCommand
 
 		$this->validateConsumerName($consumerName,$consumerTopic);
         
-        /*
-		if ($secondsToLive !== null) {
-			if (!is_numeric($secondsToLive) || is_array($secondsToLive)) {
-				throw new \UnexpectedValueException;
-			}
-
-			$secondsToLive = (int) $secondsToLive;
-			$this->validateSecondsToRun($secondsToLive);
-		}
-        */
+       
         $consumer = $this->consumerFactory->getConsumer('default',$consumerName,$consumerTopic);
+        
         //Handle debug option
         if ($consumerDebug === false)
         {

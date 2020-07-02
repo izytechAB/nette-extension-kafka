@@ -37,22 +37,61 @@ kafka:
 				level: high
 				topics: 
 					- topic1
-					- topic
+					- topic2
 
 ```
 
-## Publish and consume messages
+## Publish messages
 
 ```
-	public function __construct(ProducerFactory $producerFactory)
-	{
-		$this->producerFactory = $producerFactory;
-	}
+    <?php
+    class testPublish {
+    
+        protected $producerFactory;
 
-    public function publishMessage($message){
+        public function __construct(ProducerFactory $producerFactory)
+        {
+            $this->producerFactory = $producerFactory;
+        }
 
-        $producer = $this->producerFactory->getProducer($producerName,$producerTopic);
-        $producer->publish($message);
+        public function publishMessage($message){
+
+            $producer = $this->producerFactory->getProducer($producerName,$producerTopic);
+            $producer->publish($message);
+        }
+    }
+
+```
+
+## Consume messages
+
+```
+    <?php
+    class testConsume {
+    
+        protected $consumerFactory;
+
+        public function __construct(ConsumerFactory $consumerFactory)
+        {
+            $this->consumerFactory = $consumerFactory;
+        }
+
+        public function consumeMessages($topic)
+        {
+            
+            $consumer = $this->consumerFactory->getConsumer('default','test',$topic);
+        
+            $consumer->setDebug(false);
+
+            $consumer->addCallback([$this,'doOutputMessage']);
+            $consumer->consume();
+
+        }
+
+        public function doOutputMessage($msg)
+        {
+            echo "{$msg}\n";
+        }
     }
 
 ```
