@@ -1,5 +1,5 @@
 {
-	"name": "izytechab/nette-extention-kafka",
+	"name": "izytechab/nette-extension-kafka",
 	"description": "Nette extension for Apache Kafka (using RdKafka)",
 	"type": "library",
 	"license": "GPL-3.0-or-later",
