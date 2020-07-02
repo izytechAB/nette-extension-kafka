@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Izytechab\Kafka\Console\Command;
+namespace Izytechab\Kafka\Console;
 
 use Izytechab\Kafka\Producer\Factory as ProducerFactory;
 

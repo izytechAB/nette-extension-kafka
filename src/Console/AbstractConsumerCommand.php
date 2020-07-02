@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- namespace Izytechab\Kafka\Console\Command;
+ namespace Izytechab\Kafka\Console;
 
 use Izytechab\Kafka\Consumer\Factory as ConsumerFactory;
 
@@ -26,7 +26,6 @@ abstract class AbstractConsumerCommand extends Command
 {
 
 	protected $consumerFactory;
-
 
 	public function __construct(ConsumerFactory $consumerFactory)
 	{

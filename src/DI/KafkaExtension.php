@@ -22,8 +22,8 @@ use \Nette\DI\CompilerExtension as CompilerExtension;
 
 use Izytechab\Kafka\DI\Helpers\ProducersHelper;
 
-use Izytechab\Kafka\Console\Command\ProducerCommand;
-use Izytechab\Kafka\Console\Command\ConsumerCommand;
+use Izytechab\Kafka\Console\ProducerCommand;
+use Izytechab\Kafka\Console\ConsumerCommand;
 
 
 /**
