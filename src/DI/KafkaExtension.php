@@ -47,8 +47,8 @@ final class KafkaExtension extends CompilerExtension
 
     public function __construct()
     {
-        $this->helpers['producers'] = new \Extensions\Kafka\DI\Helpers\ProducersHelper($this);
-        $this->helpers['consumers'] = new \Extensions\Kafka\DI\Helpers\ConsumersHelper($this);
+        $this->helpers['producers'] = new \Izytechab\Kafka\DI\Helpers\ProducersHelper($this);
+        $this->helpers['consumers'] = new \Izytechab\Kafka\DI\Helpers\ConsumersHelper($this);
         
     }
 
