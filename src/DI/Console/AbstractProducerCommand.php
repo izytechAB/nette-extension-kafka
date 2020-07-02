@@ -16,11 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- namespace Extensions\Kafka\Console\Command;
+namespace Izytechab\Kafka\Console\Command;
 
-use Extensions\Kafka\Producer\Factory as ProducerFactory;
+use Izytechab\Kafka\Producer\Factory as ProducerFactory;
 
-//use Contributte\RabbitMQ\Consumer\Exception\ConsumerFactoryException;
 use Symfony\Component\Console\Command\Command;
 
 abstract class AbstractProducerCommand extends Command

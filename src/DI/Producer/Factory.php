@@ -16,13 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\Producer;
+namespace Izytechab\Kafka\Producer;
 
-use Extensions\Kafka\Producer\Producer;
-use Extensions\Kafka\Config\Config;
-//use Contributte\RabbitMQ\Exchange\ExchangeFactory;
-//use Contributte\RabbitMQ\Producer\Exception\ProducerFactoryException;
-//use Contributte\RabbitMQ\Queue\QueueFactory;
+use Izytechab\Kafka\Producer\Producer;
+use Izytechab\Kafka\Config\Config;
+
 
 final class Factory
 {
@@ -34,7 +32,6 @@ final class Factory
     
     public $config = [];
 
-	//public function __construct(ProducersDataBag $producersDataBag, QueueFactory $queueFactory,ExchangeFactory $exchangeFactory) 
 	public function __construct($config=[]) 
     {
         $this->config = $config;

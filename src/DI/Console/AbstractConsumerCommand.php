@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- namespace Extensions\Kafka\Console\Command;
+ namespace Izytechab\Kafka\Console\Command;
 
-use Extensions\Kafka\Consumer\Factory as ConsumerFactory;
+use Izytechab\Kafka\Consumer\Factory as ConsumerFactory;
 
 use Symfony\Component\Console\Command\Command;
 

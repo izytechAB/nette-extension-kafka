@@ -16,10 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\Producer;
-
-//use Contributte\RabbitMQ\Exchange\IExchange;
-//use Contributte\RabbitMQ\Queue\IQueue;
+namespace Izytechab\Kafka\Producer;
 
 final class Producer
 {

@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\Message;
+namespace Izytechab\Kafka\Message;
 
 final class Message
 {

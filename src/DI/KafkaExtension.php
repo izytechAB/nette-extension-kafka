@@ -16,20 +16,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\DI;
+namespace Izytechab\Kafka\DI;
 
 use \Nette\DI\CompilerExtension as CompilerExtension;
 
-use Extensions\Kafka\DI\Helpers\ProducersHelper;
+use Izytechab\Kafka\DI\Helpers\ProducersHelper;
 
-
-use Extensions\Kafka\Console\Command\ProducerCommand;
-use Extensions\Kafka\Console\Command\ConsumerCommand;
-
-//use \Doctrine\Common\Annotations\AnnotationReader;
-//use \Doctrine\Common\EventManager;
-
-//use izytechAB\Nette\Extensions\Neo4j\Events\EventListner as EventListner;
+use Izytechab\Kafka\Console\Command\ProducerCommand;
+use Izytechab\Kafka\Console\Command\ConsumerCommand;
 
 
 /**

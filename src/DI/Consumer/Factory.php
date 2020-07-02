@@ -16,10 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\Consumer;
+namespace Izytechab\Kafka\Consumer;
 
-use Extensions\Kafka\Consumer\Consumer;
-use Extensions\Kafka\Config\Config;
+use Izytechab\Kafka\Consumer\Consumer;
+use Izytechab\Kafka\Config\Config;
 
 
 final class Factory

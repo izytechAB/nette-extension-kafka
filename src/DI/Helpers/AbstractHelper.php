@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Extensions\Kafka\DI\Helpers;
+namespace Izytechab\Kafka\DI\Helpers;
 
-use Extensions\Kafka\DI\KafkaExtension;
+use Izytechab\Kafka\DI\KafkaExtension;
 
 abstract class AbstractHelper
 {

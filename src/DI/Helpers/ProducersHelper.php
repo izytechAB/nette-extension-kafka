@@ -17,12 +17,12 @@
  */
 
 
-namespace Extensions\Kafka\DI\Helpers;
+namespace Izytechab\Kafka\DI\Helpers;
 
-use Extensions\Kafka\DI\Helpers\AbstractHelper;
+use Izytechab\Kafka\DI\Helpers\AbstractHelper;
 
-use Extensions\Kafka\Producer\Producer;
-use Extensions\Kafka\Producer\Factory;
+use Izytechab\Kafka\Producer\Producer;
+use Izytechab\Kafka\Producer\Factory;
 
 use Nette\DI\ContainerBuilder;
 use Nette\DI\ServiceDefinition;
