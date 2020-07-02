@@ -34,5 +34,4 @@ variables:
 # If Xdebug was installed you can generate a coverage report and see code coverage metrics.
 test:
   script:
-    #- vendor/bin/phpunit --configuration phpunit.xml --coverage-text --colors=never
-    - php -v
+    - vendor/bin/tester Tests
