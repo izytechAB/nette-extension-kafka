@@ -16,12 +16,12 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"izytechab\\nette-extensions-kafka\\": "src/"
+			"Izytechab\\Kafka\\": "src/"
 		}
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"izytechab\\nette-extensions-kafka\\Tests\\": "tests"
+			"Izytechab\\Kafka\\Tests\\": "tests"
 		}
 	},
 	"require": {
