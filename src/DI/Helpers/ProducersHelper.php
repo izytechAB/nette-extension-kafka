@@ -16,7 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 namespace Izytechab\Kafka\DI\Helpers;
 
 use Izytechab\Kafka\DI\Helpers\AbstractHelper;

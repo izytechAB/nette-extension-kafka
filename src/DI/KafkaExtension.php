@@ -95,4 +95,4 @@ final class KafkaExtension extends CompilerExtension
     }
             
 
-}        
+}
