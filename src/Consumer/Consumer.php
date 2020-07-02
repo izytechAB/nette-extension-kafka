@@ -282,8 +282,10 @@ final class Consumer
 
 
         $this->consumer->subscribe($this->getTopic());
-
+        //Temp fix, only low level consuming allows multiple topics
+        $topic = join(",",$this->getTopic());
         $this->debugMsg("Subscribe {$topic}");
+
         $this->debugMsg("Waiting for partition assignment... (make take some time when quickly re-joining the group after leaving it.)");
 
 
