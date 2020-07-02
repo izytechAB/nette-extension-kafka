@@ -2,7 +2,7 @@
 	"name": "izytechab/nette-extention-kafka",
 	"description": "Nette extension for Apache Kafka (using RdKafka)",
 	"type": "library",
-	"license": "GPL-3",
+	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/izytechAB/nette-extension-kafka",
 	"keywords": ["apache kafaka","kafka","apache","nette","extension","nette-extension","php"],
 	"support": {
