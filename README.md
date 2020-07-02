@@ -1,4 +1,4 @@
-# nette-kafka-extention
+# nette-kafka-extension
 
 Easy [`Apache Kafaka`](https://kafka.apache.org//) implementation for [`Nette Framework`](https://github.com/nette/).
 
