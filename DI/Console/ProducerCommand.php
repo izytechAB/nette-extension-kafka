@@ -53,17 +53,7 @@ final class ProducerCommand extends AbstractProducerCommand
 		}
 
 		$this->validateProducerName($producerName,$producerTopic);
-        
-        /*
-		if ($secondsToLive !== null) {
-			if (!is_numeric($secondsToLive) || is_array($secondsToLive)) {
-				throw new \UnexpectedValueException;
-			}
 
-			$secondsToLive = (int) $secondsToLive;
-			$this->validateSecondsToRun($secondsToLive);
-		}
-        */
         $producer = $this->producerFactory->getProducer($producerName,$producerTopic);
         
 		$producer->publish($message);
@@ -72,15 +62,4 @@ final class ProducerCommand extends AbstractProducerCommand
 	}
 
 
-	/**
-	 * @throws \InvalidArgumentException
-	 */
-	private function validateSecondsToRun(int $secondsToLive): void
-	{
-		if ($secondsToLive <= 0) {
-			throw new \InvalidArgumentException(
-				'Parameter [secondsToLive] has to be greater then 0'
-			);
-		}
-	}
 }

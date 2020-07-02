@@ -6,7 +6,7 @@ Easy [`Apache Kafaka`](https://kafka.apache.org//) implementation for [`Nette Fr
 
 ## Documentation
 
-- [Installation](.docs/README.md#installation)
+- [Installation](.Docs/README.md#installation)
 - [Extension registration](.docs/README.md#extension-registration)
 - [Example configuration](.docs/README.md#example-configuration)
 - [Publishing messages](.docs/README.md#publishing-messages)
