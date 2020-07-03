@@ -24,7 +24,8 @@ final class Consumer
     use \Nette\SmartObject;
 
     protected $consumer;
-    protected $callbacks = [];
+    protected $callbacksMessage = [];
+    protected $callbacksStatus = [];
     protected $config;
     protected $childs = [];
     protected $brokers;
@@ -35,6 +36,10 @@ final class Consumer
     protected $name = "default";
     protected $topic = "default";
     
+    protected $statusMsgCnt = 0;
+    protected $statusMsgForks = 0;
+    protected $statusMsgInt = 10;
+
 
     public function __construct()
     {
@@ -132,25 +137,56 @@ final class Consumer
         return $this->debug;
     }
 
-
-    public function setCallbacks($callbacks = [])
+    public function addCallbackStatus(callable $callback)
     {
-        $this->callbacks = $callbacks;
+        $this->callbacksStatus[]= $callback;
     }
 
-    public function getCallbacks()
+    public function getCallbacksStatus()
     {
-        return $this->callbacks;
+        return $this->callbacksStatus;
+
     }
 
-    public function addCallback(callable $callback)
+    public function setCallbacksStatus($callbacks = [])
     {
-        $this->callbacks[]= $callback;
+        $this->callbacksStatus = $callbacks;
+    }
+
+
+    public function setCallbacksMessage($callbacks = [])
+    {
+        $this->callbacksMessage = $callbacks;
+    }
+
+    public function getCallbacksMessage()
+    {
+        return $this->callbacksMessage;
+    }
+
+    public function addCallbackMessage(callable $callback)
+    {
+        $this->callbacksMessage[]= $callback;
         
     }
 
+    public function doCallbackStatus()
+    {
+        $status = 
+        [
+            'msgCnt'=>$this->msgCnt,
+            'forkActive'=>count($this->childs),
+            'forkTotal'=>$this->statusMsgForks,
+        ]
 
-    public function doCallback($message="")
+        foreach($this->getCallbacksStatus() as $callback)
+        {
+            $callback($status);
+        }
+    }
+
+
+    public function doCallbackMessage($message="")
     {
         pcntl_async_signals(true);
        
@@ -160,7 +196,7 @@ final class Consumer
 
         if ($pid===0){
 
-            foreach ($this->getCallbacks() as $callback)
+            foreach ($this->getCallbacksMessage() as $callback)
             {
                 $callback($message);
             }
@@ -170,8 +206,10 @@ final class Consumer
             posix_kill($mypid,SIGKILL);
             exit(SIGCHLD);
         }
-        else {
+        else 
+        {
             $this->childs[$pid]=time();
+            $this->statusMsgForks++;
         }
       
         
@@ -263,14 +301,8 @@ final class Consumer
                     throw new \Exception($err);
             }
         });
-        
-
-
-
 
         $this->consumer = new \RdKafka\KafkaConsumer($this->config);
-        
-        //register consumer how? callback?
 
     }
 
@@ -278,8 +310,8 @@ final class Consumer
 
     public function consume()
     {
-        $this->initConsumer();
 
+        $this->initConsumer();
 
         $this->consumer->subscribe($this->getTopic());
         //Temp fix, only low level consuming allows multiple topics
@@ -288,14 +320,15 @@ final class Consumer
 
         $this->debugMsg("Waiting for partition assignment... (make take some time when quickly re-joining the group after leaving it.)");
 
-
+        $timer = time()+$this->statusMsgInt;
         while (true) {
 
             $message = $this->consumer->consume(1000);
             switch ($message->err) {
                 case RD_KAFKA_RESP_ERR_NO_ERROR:
                     if ($message->err !== null){
-                        $this->doCallback($message->payload);
+                        $this->msgCount++;
+                        $this->doCallbackMessage($message->payload);
                     }                      
                     break;
                 case RD_KAFKA_RESP_ERR__PARTITION_EOF:
@@ -310,7 +343,11 @@ final class Consumer
             }
 
             $this->garbageCollaction();
-
+            if (time()<$timer)
+            {
+                $this->doCallbackStatus();
+                $timer = time()+$this->statusMsgInt;
+            }
         }
 
         
