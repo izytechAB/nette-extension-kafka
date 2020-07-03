@@ -66,7 +66,7 @@ final class ConsumerCommand extends AbstractConsumerCommand
         $consumer->setDebug($consumerDebug);
 
         $consumer->addCallbackMessage([$this,'doPrintMessage']);
-        $consumer->addCallbackStatus([$this,'doPrintStatua']);
+        $consumer->addCallbackStatus([$this,'doPrintStatus']);
         $consumer->consume();
 
 

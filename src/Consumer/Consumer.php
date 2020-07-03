@@ -38,7 +38,7 @@ final class Consumer
     
     protected $statusMsgCnt = 0;
     protected $statusMsgForks = 0;
-    protected $statusMsgInt = 10;
+    protected $statusMsgInt = 60;
 
 
     public function __construct()
@@ -339,7 +339,7 @@ final class Consumer
             }
 
             $this->garbageCollaction();
-            if (time()<$timer)
+            if (time()>$timer)
             {
                 $this->doCallbackStatus();
                 $timer = time()+$this->statusMsgInt;
