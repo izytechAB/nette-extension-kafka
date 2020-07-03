@@ -6,18 +6,18 @@ Easy [`Apache Kafaka`](https://kafka.apache.org//) implementation for [`Nette Fr
 
 ## Documentation
 
-- [Installation](.Docs/README.md#installation)
-- [Extension registration](.Docs/README.md#extension-registration)
-- [Example configuration](.Docs/README.md#example-configuration)
-- [Publishing messages](.Docs/README.md#publishing-messages)
-- [Consuming messages](.Docs/README.md#consuming-messages)
-- [Consuming and prodcuing messages trough CLI](.Docs/README.md#consuming-and-prodcuing-messages-trough-cli)
+- [Installation](../Docs/README.md#installation)
+- [Extension registration](../Docs/README.md#extension-registration)
+- [Example configuration](../Docs/README.md#example-configuration)
+- [Publishing messages](../Docs/README.md#publishing-messages)
+- [Consuming messages](../Docs/README.md#consuming-messages)
+- [Consuming and prodcuing messages trough CLI](../Docs/README.md#consuming-and-prodcuing-messages-trough-cli)
 
 ## Versions
 
 | State  | Version      | Branch   | Nette  | PHP     |
 |--------|--------------|----------|--------|---------|
-| stable | `dev`     | `master` | `3.0+` | `^7.1`  |
+| stable | `@dev`     | `master` | `3.0+` | `^7.1`  |
 
 ## Maintainers
 
