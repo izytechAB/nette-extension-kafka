@@ -174,10 +174,10 @@ final class Consumer
     {
         $status = 
         [
-            'msgCnt'=>$this->msgCnt,
+            'msgCnt'=>$this->statusMsgCnt,
             'forkActive'=>count($this->childs),
             'forkTotal'=>$this->statusMsgForks,
-        ]
+        ];
 
         foreach($this->getCallbacksStatus() as $callback)
         {
@@ -277,10 +277,6 @@ final class Consumer
         $this->config->set('batch.num.messages', '1');
         $this->config->set('heartbeat.interval.ms','10');
 
-        //$this->consumer = new \RdKafka\KafkaConsumer($this->config);
-
-        
-
 
         // Set a rebalance callback to log partition assignments (optional)
         $this->config->setRebalanceCb(function (\RdKafka\KafkaConsumer $kafka, $err, array $partitions = null) {
@@ -291,13 +287,13 @@ final class Consumer
                     $kafka->assign($partitions);
                     break;
         
-                    case RD_KAFKA_RESP_ERR__REVOKE_PARTITIONS:
-                        //echo "Revoke: ";
-                        //var_dump($partitions);
-                        $kafka->assign(NULL);
-                        break;
+                case RD_KAFKA_RESP_ERR__REVOKE_PARTITIONS:
+                    //echo "Revoke: ";
+                    //var_dump($partitions);
+                    $kafka->assign(NULL);
+                    break;
         
-                    default:
+                default:
                     throw new \Exception($err);
             }
         });
@@ -327,7 +323,7 @@ final class Consumer
             switch ($message->err) {
                 case RD_KAFKA_RESP_ERR_NO_ERROR:
                     if ($message->err !== null){
-                        $this->msgCount++;
+                        $this->statusMsgCnt++;
                         $this->doCallbackMessage($message->payload);
                     }                      
                     break;
