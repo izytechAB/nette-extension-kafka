@@ -17,7 +17,7 @@ Easy [`Apache Kafaka`](https://kafka.apache.org//) implementation for [`Nette Fr
 
 | State  | Version      | Branch   | Nette  | PHP     |
 |--------|--------------|----------|--------|---------|
-| stable | `^1.0.0`     | `master` | `3.0+` | `^7.1`  |
+| stable | `dev`     | `master` | `3.0+` | `^7.1`  |
 
 ## Maintainers
 
