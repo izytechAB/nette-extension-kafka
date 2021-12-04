@@ -34,7 +34,7 @@ final class Producer
     {
         if (!is_array($config['brokers']))
         {
-            $this->brokers = explode(",",$brokers);
+            $this->brokers = explode(",",$config['brokers']);
         }
         else {
             $this->brokers = $config['brokers'];
