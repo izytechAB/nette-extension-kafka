@@ -41,7 +41,7 @@ final class Factory
 	/**
 	 * @throws ConsumerFactoryException
 	 */
-	public function getConsumer(string $group="default", string $name,string $topic): Consumer
+	public function getConsumer(string $group="default", string $name="",string $topic=""): Consumer
 	{
 
 		if (!isset($this->consumer["{$name}:{$topic}"])) {
