@@ -271,10 +271,11 @@ final class Consumer
         
         $this->config->set('metadata.broker.list', join(",",$this->brokers));
         
-        $this->config->set('auto.offset.reset', 'smallest');
+        //$this->config->set('auto.offset.reset', 'smallest');
+        $this->config->set('auto.offset.reset', 'latest');
         $this->config->set('enable.auto.commit','true');
         $this->config->set('auto.commit.interval.ms', '50');
-        $this->config->set('batch.num.messages', '1');
+        //$this->config->set('batch.num.messages', '1'); //only for producers
         $this->config->set('heartbeat.interval.ms','10');
 
 
